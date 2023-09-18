@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8081
 spring:
   main:
     web-application-type: reactive
@@ -24,22 +24,22 @@ spring:
           uri: lb://HOTEL-SERVICE
           predicates:
            - Path=/hotel/**
-#      global-cors:
-#        cors-configurations:
-#          '[/**]':
-#            allowedOrigins:
-#              - "http://localhost:300"
-#            allowedMethods:
-#              - GET
-#              - POST
-#              - PUT
-#              - DELETE
-#            allowedHeaders:
-#              - Content-Type
-#              - Authorization
-#              - Access-Control-Allow-Origin
-#              - Access-Control-Allow-Credentials
-#              - Access-Control-Allow-Headers
+      global-cors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "*/"
+            allowedMethods:
+              - GET
+              - POST
+              - PUT
+              - DELETE
+            allowedHeaders:
+              - Content-Type
+              - Authorization
+              - Access-Control-Allow-Origin
+              - Access-Control-Allow-Credentials
+              - Access-Control-Allow-Headers
 
 
 eureka:
